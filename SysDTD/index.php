@@ -71,14 +71,14 @@
                         <a class="nav-link page-scroll" href="#header">INICIO <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">GEFORCE</a>
+                        <a class="nav-link page-scroll" href="#features">SYSDTD</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">RTX</a>
+                        <a class="nav-link page-scroll" href="#details">NOSOTROS</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">COMPRAR</a>
+                        <a class="nav-link page-scroll" href="#pricing">TEST</a>
                     </li>
                     
                     
@@ -122,14 +122,14 @@
                 <div class="row">
                     <div class="col-lg-6 col-xl-5">
                         <div class="text-container">
-                            <h1>GEFORCE RTX SERIES 30</h1>
-                            <p class="p-large">Las GPUs GeForce RTX™ Serie 30 proporcionan el rendimiento definitivo para los jugadores y los creadores. Cuentan con la tecnología Ampere, con la arquitectura de RTX de 2.ª generación de NVIDIA, con nuevos Núcleos RT, Núcleos Tensor y multiprocesadores de transmisión para potenciar los gráficos con ray tracing más realistas y las funciones de IA de vanguardia.</p> 
+                            <h1>Sistema de Detección de Trastorno Depresivo</h1>
+                            <p class="p-large">¡Bienvenido a nuestro Sistema de Detección de Trastorno Depresivo! Somos una plataforma diseñada para ayudar a detectar signos tempranos de depresión en estudiantes. Nuestra herramienta ofrece un cuestionario de fácil acceso y comprensión, que permitirá obtener resultados precisos y confiables. Estamos comprometidos en mejorar la salud mental de nuestros usuarios, brindando información valiosa y recomendaciones para el tratamiento adecuado en caso de ser necesario. ¡Explora nuestra plataforma y descubre cómo podemos ayudarte a cuidar tu bienestar emocional!</p> 
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
                         <div class="image-container">
                             <div class="img-wrapper">
-                                <img class="img-fluid" src="images/3090-ti-vga-body.png" alt="alternative">
+                                <img class="img-fluid" src="https://cdincbarcelona.com/wp-content/uploads/2019/02/depre.png" alt="alternative">
                             </div> <!-- end of img-wrapper -->
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="above-heading"></div>
-                    <h2 class="h2-heading">SOLO EN GEFORCE RTX</h2>
+                    <h2 class="h2-heading">SysDTD</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -158,8 +158,8 @@
                             <img class="img-fluid" src="images/gpu-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">LAS GPU MÁS RÁPIDAS DEL MUNDO</h4>
-                            <p>Arquitectura NVIDIA Ampere</p>
+                            <h4 class="card-title">DETECCIÓN TEMPRANA DE TRASTORNOS DEPRESIVOS</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -170,8 +170,8 @@
                             <img class="img-fluid" src="images/game-ready-driver-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">LA MEJOR EXPERIENCIA PARA CADA JUGADOR</h4>
-                            <p>Drivers Game Ready</p>
+                            <h4 class="card-title">DETECCIÓN TEMPRANA Y CONFIABLE</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -182,8 +182,8 @@
                             <img class="img-fluid" src="images/ray-tracing-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">GRÁFICOS MÁS ENVOLVENTES Y REALISTAS</h4>
-                            <p>Ray Tracing de 2ª generación</p>
+                            <h4 class="card-title">PRIVACIDAD Y CONFIDENCIALIDAD ASEGURADAS</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -194,8 +194,8 @@
                             <img class="img-fluid" src="images/dlss-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">RENDIMIENTO ACELERADO POR IA</h4>
-                            <p>NVIDIA DLSS</p>
+                            <h4 class="card-title">AHORRO DE TIEMPO Y RECURSOS EN COMPARACION A DIAGNOSTICOS TRADICIONALES</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -205,8 +205,8 @@
                             <img class="img-fluid" src="images/reflex-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">LATENCIA DE SISTEMA MÁS BAJA</h4>
-                            <p>NVIDIA Reflex</p>
+                            <h4 class="card-title">ACCESO FACIL Y CONVENIENTE</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -216,8 +216,8 @@
                             <img class="img-fluid" src="images/encode-icon.svg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">REALIZADO PARA TRANSMISIÓN EN VIVO</h4>
-                            <p>NVIDIA Encoder</p>
+                            <h4 class="card-title">FACILITA LA DETECCIÓN TEMPRANA DE POSIBLES CASOS DE DEPRESIÓN</h4>
+                            <p></p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -237,11 +237,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>RTX. IT’S ON.</h2>
-                        <h2>RAY TRACING E IA DEFINITIVOS</h2>
-                        <p>NVIDIA RTX es la plataforma más avanzada para las tecnologías de ray tracing y de IA que están revolucionando las formas en que jugamos y creamos. Más de 150 de los mejores juegos y aplicaciones utilizan RTX para ofrecer gráficos realistas con un rendimiento increíblemente rápido o nuevas funciones de IA de vanguardia como NVIDIA DLSS y NVIDIA Broadcast. RTX es el nuevo estándar.</p>
+                        <h2>SYSDTD</h2>
+                        <h2>Y COLEGIO ALERCE</h2>
+                        <p>En nuestra empresa, estamos comprometidos con mejorar la salud mental de las personas, y creemos que la educación es uno de los pilares fundamentales para lograrlo. Por eso, cuando conocimos al Colegio Alerce y su misión de formar a sus alumnos en un ambiente inclusivo y respetuoso, supimos que teníamos que colaborar. 
+                            Juntos, hemos creado un sistema innovador que permite detectar de manera temprana signos de depresión en los estudiantes, 
+                            y así brindarles el apoyo que necesitan para superar cualquier obstáculo. Nos enorgullece trabajar con el Colegio Alerce en esta misión en común, 
+                            y estamos seguros de que juntos podemos hacer una gran diferencia en la vida de nuestros jóvenes.</p>
 
-                        <a class="btn-solid-reg page-scroll" href="https://www.nvidia.com/en-us/">VISITA NVIDIA</a>
+                        <a class="btn-solid-reg page-scroll" href="https://alerce.edu.mx">VISITA COLEGIO ALERCE</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
@@ -369,16 +372,19 @@
                 <div class="col-md-4">
                     <div class="footer-col first">
                         <h4>Sobre nosotros</h4>
-                        <p class="p-small">El lugar numero uno para encontrar facilmente informacion sobre tarjetas graficas</p>
+                        <p class="p-small">Colegio Alerce fue fundado hace casi 30 años con la visión de ofrecer una educación de calidad asequible. Es una comunidad escolar que diferencia a sus graduados del resto debido a sus altos estándares morales y su capacidad para innovar, construir y aplicar su conocimiento y carisma, así como su facilidad con las palabras.</p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col middle">
-                        <h4>Importante</h4>
+                        <h4>Horarios de Oficina</h4>
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Registrate para estar al tanto de todas las noticias!!</div>
+                                <div class="media-body">Lunes a Viernes: 7:00 a.m. a 3:00 p.m. <br>
+                                    Citas: 9:00 a.m. a 11:30 a.m. <br>
+                                    Dias festivos: 8:00 a.m. a 2:00 p.m.
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -389,11 +395,11 @@
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <div class="media-body">Av. Tecnológico 115, Sahuaro, 83170 Hermosillo, Son.</div>
+                                <div class="media-body">Blvd Navarrete 631 <br> Col. Obispos Residencial, Hermosillo Sonora. <br> México C.P. 83210</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a class="white" href="l19330556@hermosillo.tecnm.mx">l19330556@hermosillo.tecnm.mx</a> <i class="fas fa-globe"></i><a class="white" href="http://hermosillo.tecnm.mx/">http://hermosillo.tecnm.mx/</a></div>
+                                <div class="media-body"><a class="white" href="https://wa.me/526623615855?text=Hello%20ALERCE">662-428-1020</a> <i class="fas fa-globe"></i><a class="white" href="https://alerce.edu.mx">Colegio Alerce</a></div>
                             </li>
                         </ul>
                     </div> 
@@ -409,7 +415,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2022 NVIDIA Corporation</p>
+                    <p class="p-small">Design by DT Innovations</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

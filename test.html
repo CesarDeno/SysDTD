@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,6 +21,9 @@
     <!-- Website Title -->
     <title>SysDTD - Test</title>
     
+    <!-- Scripts -->
+    
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -31,6 +35,8 @@
 	<!-- Favicon  -->
     <link rel="icon" href="images/logo.png">
 </head>
+
+
 <body data-spy="scroll" data-target=".fixed-top">
     
     <!-- Preloader -->
@@ -102,44 +108,11 @@
             <label>Recuerde que todas sus respuestas son confidenciales y solo se utilizarán para evaluar su estado de salud mental. Si tiene alguna inquietud o pregunta durante el cuestionario, no dude en comunicarse con su profesional de la salud mental o su médico de cabecera.</label>
             <label>Gracias por tomarse el tiempo de completar este cuestionario. Sabemos que puede ser difícil hablar sobre problemas de salud mental, pero queremos asegurarnos de que tenga acceso a la atención médica que necesita.</label>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">  
-                        <div class="form-container">
-                            <form action="registro_usuario.php" method="POST">
-                                <div class="form-group">
-                                    <label>Pregunta 1.-</label>
-                                    <input type="text" name="nombre" class="form-control-input" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="apellidosuser" class="form-control-input" required>
-                                    <label class="label-control">Apellidos</label>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="emailuser" class="form-control-input" required>
-                                    <label class="label-control">Correo</label>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="pass" class="form-control-input" required>
-                                    <label class="label-control">Contrase&ntilde;a</label>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="rpass" class="form-control-input" required>
-                                    <label class="label-control">Repetir Contrase&ntilde;a</label>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="form-control-submit-button">ENVIAR RESPUESTAS</button>
-                                </div>
-                                <div class="form-message">
-                                    <div id="smsgSubmit" class="h3 text-center hidden"></div>
-                                </div>
-                            </form>
-                        </div> <!-- end of form container -->
-                    </div> <!-- end of text-container -->
+                <div class="col-lg-12">  
+                  <div id="question-container">
+                  </div>
+                    <button id="prev-btn">Anterior</button>
+                    <button id="next-btn">Siguiente</button> <!-- end of form container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -151,6 +124,7 @@
 <!-- end of footer -->
 
     <!-- Scripts -->
+    <script src="js/test.js"></script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->

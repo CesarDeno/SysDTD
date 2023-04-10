@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionsContainer = document.getElementById("question-container");
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
+  const sendBtn = document.getElementById("send-btn");
   
   const questionsPerPage = 5;
   let currentQuestion = 0;
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
               )
               .join("")}
           </ul>
+
         </div>
       `;
     }
@@ -137,6 +139,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
+  function sendQuestions() {
+    // Obtener las respuestas de las preguntas
+    saveAnswers();
+  
+    // Construir un objeto FormData con las respuestas
+    const formData = new FormData();
+    questions.forEach(question => {
+      formData.append(question.name, question.answer);
+    });
+  
+    // Enviar una solicitud POST al archivo PHP
+    fetch('guardar_respuestas.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      // Manejar la respuesta del servidor
+      console.log(response);
+    })
+    .catch(error => {
+      // Manejar el error de la solicitud
+      console.error(error);
+    });
+  }
+
   showQuestions();
   const radios = document.querySelectorAll('input[type="radio"]');
   radios.forEach(radio => {
@@ -144,5 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   prevBtn.addEventListener("click", prevQuestions);
   nextBtn.addEventListener("click", nextQuestions);
+  sendBtn.addEventListener("click", sendQuestions);
 });
   

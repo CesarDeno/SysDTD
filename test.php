@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -21,9 +25,6 @@
     <!-- Website Title -->
     <title>SysDTD - Test</title>
     
-    <!-- Scripts -->
-    
-
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -78,11 +79,20 @@
                         <a class="nav-link page-scroll" href="index.php">BENEFICIOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">NOSOTROS</a>
+                        <a class="nav-link page-scroll" href="index.php">NOSOTROS </a>
                     </li>
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">INICIAR SESION</a>
+                    <a class="btn-outline-sm" href="log-in.html">
+                        <?php
+                        if(!isset($_SESSION['usuario'])){
+                            echo "INICIAR SESION";
+                        } else {
+                            echo $_SESSION['usuario'];
+                            session_destroy();
+                        } 
+                        ?>
+                    </a>
                 </span>
             </div>
         </div> <!-- end of container -->
@@ -107,14 +117,81 @@
             <label>El cuestionario consta de varias preguntas que evalúan sus sentimientos y comportamientos en los últimos tiempos. Por favor, lea cada pregunta cuidadosamente y seleccione la respuesta que mejor se aplica a su situación. No hay respuestas correctas o incorrectas, simplemente responda honestamente.</label>
             <label>Recuerde que todas sus respuestas son confidenciales y solo se utilizarán para evaluar su estado de salud mental. Si tiene alguna inquietud o pregunta durante el cuestionario, no dude en comunicarse con su profesional de la salud mental o su médico de cabecera.</label>
             <label>Gracias por tomarse el tiempo de completar este cuestionario. Sabemos que puede ser difícil hablar sobre problemas de salud mental, pero queremos asegurarnos de que tenga acceso a la atención médica que necesita.</label>
+            <p></p>
             <div class="row">
                 <div class="col-lg-12">  
-                  <div id="question-container">
-                  </div>
-                    <button id="prev-btn">Anterior</button>
-                    <button id="next-btn">Siguiente</button> <!-- end of form container -->
+                    <form method="post" action="guardar_respuestas.php">
+                        <h3>1. ¿Pregunta 1?</h3>
+                        <input type="radio" name="pregunta1" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta1" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta1" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta1" value="Desacuerdo"> Desacuerdo<br><br>
+                        
+                        <h3>2. ¿Pregunta 2?</h3>
+                        <input type="radio" name="pregunta2" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta2" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta2" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta2" value="Desacuerdo"> Desacuerdo<br><br>
+                        
+                        <h3>3. ¿Pregunta 3?</h3>
+                        <input type="radio" name="pregunta3" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta3" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta3" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta3" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>4. ¿Pregunta 4?</h3>
+                        <input type="radio" name="pregunta4" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta4" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta4" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta4" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>5. ¿Pregunta 5?</h3>
+                        <input type="radio" name="pregunta5" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta5" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta5" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta5" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>6. ¿Pregunta 6?</h3>
+                        <input type="radio" name="pregunta6" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta6" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta6" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta6" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>7. ¿Pregunta 7?</h3>
+                        <input type="radio" name="pregunta7" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta7" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta7" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta7" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>8. ¿Pregunta 8?</h3>
+                        <input type="radio" name="pregunta8" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta8" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta8" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta8" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>9. ¿Pregunta 9?</h3>
+                        <input type="radio" name="pregunta9" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta9" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta9" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta9" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>10. ¿Pregunta 10?</h3>
+                        <input type="radio" name="pregunta10" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta10" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta10" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta10" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>11. ¿Pregunta 11?</h3>
+                        <input type="radio" name="pregunta11" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta11" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta11" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta11" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <input type="hidden" name="idUser" value="<?php echo $_SESSION['id']; ?>">
+                        <button class="btn-solid-reg page-scroll" type="submit">Enviar Respuestas</button>
+                    </form>                    
                 </div> <!-- end of col -->
-            </div> <!-- end of row -->
+            </div> <!-- end of row -->           
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of details -->
@@ -124,7 +201,6 @@
 <!-- end of footer -->
 
     <!-- Scripts -->
-    <script src="js/test.js"></script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->

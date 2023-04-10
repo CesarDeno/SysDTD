@@ -1,21 +1,33 @@
 <?php
 
-
 $correo=$_POST['emailuser'];
-$password=$_POST['pass'];
+$pass=$_POST['pass'];
 
-$conexion=mysqli_connect("localhost","id19039307_root","DQL()~TrK8a6T5{a","id19039307_pagina_web")or die("<h2>Error de Conexion</h2>");
+// Datos de conexión a MySQL
+$host = "192.168.1.80";
+$user = "root";
+$password = "";
+$database = "sysdtd";
 
-$consulta="SELECT*FROM usuarios where emailuser='$correo' and pass='$password'";
-$resultado=mysqli_query($conexion,$consulta);
+// Conexión a MySQL
+$conn = new mysqli($host, $user, $password, $database);
+if ($conn->connect_error) {
+  die("Error de conexión: " . $conn->connect_error);
+}
+
+$consulta="SELECT*FROM usuarios where emailuser='$correo' and pass='$pass'";
+$resultado=mysqli_query($conn,$consulta);
 
 $filas=mysqli_num_rows($resultado);
-
+$fila = mysqli_fetch_assoc($resultado);
 
 if($filas){
     session_start();
-    $_SESSION['usuario'] = $correo;
-    header("location:index.php");
+    $username = $fila['username'];
+    $usernameMAY = strtoupper($username);
+    $_SESSION['usuario'] = $usernameMAY;
+    $_SESSION['id'] = $fila['idUser'];
+    header("location:test.php");
 
 }else{
     echo'
@@ -27,4 +39,4 @@ if($filas){
 }
 
 mysqli_free_result($resultado);
-mysqli_close($conexion);
+mysqli_close($conn);

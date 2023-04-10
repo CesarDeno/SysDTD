@@ -78,21 +78,6 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#colegio">NOSOTROS</a>
                     </li>
-
-                    
-                    
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll"> <?php
-                        
-                        if(!isset($_SESSION['usuario'])){
-                           
-                        } else {
-                            echo $_SESSION['usuario'];
-                        } 
-                        
-                        ?>
-                        </a>
-                    </li>
                 </ul>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="log-in.html">
@@ -100,14 +85,12 @@
                         if(!isset($_SESSION['usuario'])){
                             echo "INICIAR SESION";
                         } else {
-                            echo "CERRAR SESION";
+                            echo $_SESSION['usuario'];
                             session_destroy();
                         } 
                         ?>    
                     </a>
                 </span>
-
-
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -147,7 +130,7 @@
                         <h2>Acerca de SysDTD</h2>
                         <p>Nuestro sistema de detección de trastorno depresivo utiliza las últimas tecnologías de ciencia de datos para ayudar a diagnosticar correctamente si un alumno tiene este trastorno. El sistema recopila información de los cuestionarios completados por los estudiantes, incluyendo sus respuestas a preguntas específicas y sus patrones de respuesta.</p>
                         <p>Nuestro algoritmo de ciencia de datos procesa esta información y utiliza modelos estadísticos avanzados para identificar patrones y tendencias en las respuestas de los estudiantes. El sistema también tiene en cuenta otros factores, como la edad del estudiante, su género y cualquier otro síntoma relacionado con la depresión.</p>
-                        <a class="btn-solid-reg page-scroll" href="test.html">REALIZAR TEST</a>
+                        <a class="btn-solid-reg page-scroll" href="log-in.html">REALIZAR TEST</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">

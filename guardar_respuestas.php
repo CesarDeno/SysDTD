@@ -1,9 +1,9 @@
 <?php
 // Datos de conexión a MySQL
-$host = "192.168.1.80";
-$user = "root";
-$password = "";
-$database = "sysdtd";
+$host = "fdb1028.awardspace.net";
+$user = "4301210_sysdtd";
+$password = "BR.Tx%9:6:Nf[2_L";
+$database = "4301210_sysdtd";
 
 // Conexión a MySQL
 $conn = new mysqli($host, $user, $password, $database);

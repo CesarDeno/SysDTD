@@ -1,5 +1,13 @@
+<?php
+session_start();
+if($_SESSION['id'] > 100){
+    header('Location: index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +26,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>SysDTD - Iniciar Sesion</title>
+    <title>SysDTD - Test</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -31,6 +39,8 @@
 	<!-- Favicon  -->
     <link rel="icon" href="images/logo.png">
 </head>
+
+
 <body data-spy="scroll" data-target=".fixed-top">
     
     <!-- Preloader -->
@@ -49,9 +59,9 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="#header"><img src="images/logo.png" alt="alternative"></a> 
-             <!-- Text Logo - Use this if you don't have a graphic logo -->
-             <a class="navbar-brand logo-text page-scroll" href="index.php">SysDTD</a>
+            <a class="navbar-brand logo-image" href="index.php"><img src="images/logo.png" alt="alternative"></a> 
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a class="navbar-brand logo-text page-scroll" href="index.php">SysDTD</a>
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +73,7 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">INICIO <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">TEST</a>
@@ -72,53 +82,45 @@
                         <a class="nav-link page-scroll" href="index.php">BENEFICIOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">NOSOTROS</a>
+                        <a class="nav-link page-scroll" href="index.php">NOSOTROS </a>
                     </li>
                 </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">INICIAR SESION</a>
-                </span>
+                <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';
+                    echo '<form action="logout.php" method="POST">';
+                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">Cerrar sesión</button></span>';
+                    echo '</form>';
+                } else {
+                    echo '<span class="nav-item"><a class="btn-outline-sm" href="log-in.php">INICIAR SESION</a></span>';
+                }
+                ?>
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-
     <!-- Header -->
-    <header id="header" class="ex-2-header">
+    <header id="header" class="header">
+        <div class="header-content">
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->   
+    <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#275940;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg> 
+
+    <!-- Details -->
+    <div id="about" class="basic-1">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Iniciar Sesion</h1>
-                    <!-- Sign Up Form -->
-                    <div class="form-container">
-                        <form action="login_usuario.php" method="post">
-                            <div class="form-group">
-                                <input name="emailuser" type="email" class="form-control-input" required>
-                                <label class="label-control">Correo</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input name="pass" type="password" class="form-control-input" required>
-                                <label class="label-control">Contrase&ntilde;a</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">INICIAR SESION</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                    </div> <!-- end of form container -->
-                    <!-- end of sign up form -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
+            <h1>Resultados del Test de Trastorno Depresivo</h1>
+            <p></p>
+            <label>¡Bienvenido a la visualizacion de datos del test de trastorno depresivo! En esta sección, podrás visualizar los resultados obtenidos por los alumnos en distintas evaluaciones y actividades realizadas en el transcurso del año escolar. Los datos se presentan de manera clara y organizada, permitiéndote identificar rápidamente áreas de oportunidad y fortalezas en el desempeño de los estudiantes. Con esta herramienta, podrás tomar decisiones informadas para mejorar la calidad educativa en tu institución..</label>       
         </div> <!-- end of container -->
-    </header> <!-- end of ex-header -->
-    <!-- end of header -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
 
+<!-- Footer -->
+<svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:#275940;}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>
+<!-- end of footer -->
 
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->

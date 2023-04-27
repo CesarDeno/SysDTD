@@ -82,18 +82,16 @@
                         <a class="nav-link page-scroll" href="index.php">NOSOTROS </a>
                     </li>
                 </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">
-                        <?php
-                        if(!isset($_SESSION['usuario'])){
-                            echo "INICIAR SESION";
-                        } else {
-                            echo $_SESSION['usuario'];
-                            session_destroy();
-                        } 
-                        ?>
-                    </a>
-                </span>
+                <?php
+                if(isset($_SESSION['usuario'])){
+                    echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';
+                    echo '<form action="logout.php" method="POST">';
+                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">Cerrar sesión</button></span>';
+                    echo '</form>';
+                } else {
+                    echo '<span class="nav-item"><a class="btn-outline-sm" href="log-in.php">INICIAR SESION</a></span>';
+                }
+                ?>
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->

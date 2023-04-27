@@ -4,10 +4,10 @@ $correo=$_POST['emailuser'];
 $pass=$_POST['pass'];
 
 // Datos de conexión a MySQL
-$host = "fdb1028.awardspace.net";
-$user = "4301210_sysdtd";
-$password = "BR.Tx%9:6:Nf[2_L";
-$database = "4301210_sysdtd";
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "sysdtd";
 
 // Conexión a MySQL
 $conn = new mysqli($host, $user, $password, $database);
@@ -27,7 +27,11 @@ if($filas){
     $usernameMAY = strtoupper($username);
     $_SESSION['usuario'] = $usernameMAY;
     $_SESSION['id'] = $fila['idUser'];
-    header("location:test.php");
+    if($_SESSION['id'] > 100){
+        header("Location:test.php");
+    }else{
+        header("Location:resultados.php");
+    }
 
 }else{
     echo'

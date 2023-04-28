@@ -2,7 +2,7 @@
 // Datos de conexión a MySQL
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "Xjco8RjNMV9l";
 $database = "sysdtd";
 
 // Conexión a MySQL

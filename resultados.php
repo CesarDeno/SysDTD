@@ -26,7 +26,7 @@ if($_SESSION['id'] > 100){
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>SysDTD - Test</title>
+    <title>SysDTD - Resultados</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -89,7 +89,7 @@ if($_SESSION['id'] > 100){
                 if(isset($_SESSION['usuario'])){
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';
                     echo '<form action="logout.php" method="POST">';
-                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">Cerrar sesión</button></span>';
+                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">CERRAR SESIÓN</button></span>';
                     echo '</form>';
                 } else {
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="log-in.php">INICIAR SESION</a></span>';

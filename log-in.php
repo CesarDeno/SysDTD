@@ -78,9 +78,6 @@ session_start();
                         <a class="nav-link page-scroll" href="index.php">NOSOTROS</a>
                     </li>
                 </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="log-in.html">INICIAR SESION</a>
-                </span>
             </div>
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->

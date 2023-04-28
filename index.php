@@ -83,7 +83,7 @@
                 if(isset($_SESSION['usuario'])){
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';
                     echo '<form action="logout.php" method="POST">';
-                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">Cerrar sesión</button></span>';
+                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">CERRAR SESIÓN</button></span>';
                     echo '</form>';
                 } else {
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="log-in.php">INICIAR SESION</a></span>';
@@ -128,7 +128,7 @@
                         <h2>Acerca de SysDTD</h2>
                         <p>Nuestro sistema de detección de trastorno depresivo utiliza las últimas tecnologías de ciencia de datos para ayudar a diagnosticar correctamente si un alumno tiene este trastorno. El sistema recopila información de los cuestionarios completados por los estudiantes, incluyendo sus respuestas a preguntas específicas y sus patrones de respuesta.</p>
                         <p>Nuestro algoritmo de ciencia de datos procesa esta información y utiliza modelos estadísticos avanzados para identificar patrones y tendencias en las respuestas de los estudiantes. El sistema también tiene en cuenta otros factores, como la edad del estudiante, su género y cualquier otro síntoma relacionado con la depresión.</p>
-                        <a class="btn-solid-reg page-scroll" href="log-in.html">REALIZAR TEST</a>
+                        <a class="btn-solid-reg page-scroll" href="log-in.php">REALIZAR TEST</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">

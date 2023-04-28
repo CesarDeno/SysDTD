@@ -86,7 +86,7 @@
                 if(isset($_SESSION['usuario'])){
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';
                     echo '<form action="logout.php" method="POST">';
-                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">Cerrar sesión</button></span>';
+                    echo '<span class="nav-item"><button type="submit" class="btn-outline-sm" name="cerrar-sesion">CERRAR SESIÓN</button></span>';
                     echo '</form>';
                 } else {
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="log-in.php">INICIAR SESION</a></span>';

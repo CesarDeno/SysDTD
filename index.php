@@ -78,7 +78,20 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#colegio">NOSOTROS</a>
                     </li>
+                    <?php if(isset($_SESSION) && $_SESSION['id'] > 100): ?>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
+                        </li>
+                    <?php elseif(isset($_SESSION) && $_SESSION['id'] <= 100): ?>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
+                        </li>
+                <?php endif; ?>
                 </ul>
+                
                 <?php
                 if(isset($_SESSION['usuario'])){
                     echo '<span class="nav-item"><a class="btn-outline-sm" href="#">' . $_SESSION['usuario'] . '</a></span>';

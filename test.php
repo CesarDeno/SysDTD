@@ -72,15 +72,11 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">TEST</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">BENEFICIOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">NOSOTROS </a>
-                    </li>
+                    <?php if(isset($_SESSION) && $_SESSION['id'] <= 100): ?>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="resultados.php">RESULTADOS TEST</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
                 <?php
                 if(isset($_SESSION['usuario'])){

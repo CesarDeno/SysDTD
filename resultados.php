@@ -1,8 +1,13 @@
 <?php
 session_start();
-if($_SESSION['id'] > 100){
+if(isset($_SESSION['usuario'])){
+    if($_SESSION['id'] > 100){
+        header('Location: index.php');
+    }
+}else{
     header('Location: index.php');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -76,13 +81,10 @@ if($_SESSION['id'] > 100){
                         <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">TEST</a>
+                        <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">BENEFICIOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.php">NOSOTROS </a>
+                        <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
                     </li>
                 </ul>
                 <?php

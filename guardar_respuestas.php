@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 
 // Obtener respuestas del formulario
 $idUser = $_POST["idUser"];
+$nombreAlumno = $_POST["nombreAlumno"];
 $pregunta1 = $_POST["pregunta1"];
 $pregunta2 = $_POST["pregunta2"];
 $pregunta3 = $_POST["pregunta3"];
@@ -24,10 +25,14 @@ $pregunta8 = $_POST["pregunta8"];
 $pregunta9 = $_POST["pregunta9"];
 $pregunta10 = $_POST["pregunta10"];
 $pregunta11 = $_POST["pregunta11"];
+$pregunta12 = $_POST["pregunta12"];
+$pregunta13 = $_POST["pregunta13"];
+$pregunta14 = $_POST["pregunta14"];
+$pregunta15 = $_POST["pregunta15"];
 
 // Insertar respuestas en la base de datos
-$sql = "INSERT INTO respuestas (alumnoID, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11) 
-VALUES ('$idUser','$pregunta1', '$pregunta2', '$pregunta3', '$pregunta4', '$pregunta5', '$pregunta6', '$pregunta7', '$pregunta8', '$pregunta9', '$pregunta10', '$pregunta11')";
+$sql = "INSERT INTO respuestas (alumnoID, nombreAlumno, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15) 
+VALUES ('$idUser','$nombreAlumno','$pregunta1', '$pregunta2', '$pregunta3', '$pregunta4', '$pregunta5', '$pregunta6', '$pregunta7', '$pregunta8', '$pregunta9', '$pregunta10', '$pregunta11', '$pregunta12', '$pregunta13', '$pregunta14', '$pregunta15')";
 if ($conn->query($sql) === TRUE) {
   echo '<script>
         alert("Datos guardados correctamente");

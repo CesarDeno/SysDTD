@@ -78,11 +78,11 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#colegio">NOSOTROS</a>
                     </li>
-                    <?php if(isset($_SESSION) && $_SESSION['id'] > 100): ?>
+                    <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] > 100): ?>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
                         </li>
-                    <?php elseif(isset($_SESSION) && $_SESSION['id'] <= 100): ?>
+                    <?php elseif(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
                         </li>

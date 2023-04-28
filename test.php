@@ -72,7 +72,7 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
-                    <?php if(isset($_SESSION) && $_SESSION['id'] <= 100): ?>
+                    <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="resultados.php">RESULTADOS TEST</a>
                         </li>
@@ -181,7 +181,32 @@
                         <input type="radio" name="pregunta11" value="Indiferente"> Indiferente<br>
                         <input type="radio" name="pregunta11" value="Desacuerdo"> Desacuerdo<br><br>
 
+                        <h3>11. ¿Pregunta 12?</h3>
+                        <input type="radio" name="pregunta12" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta12" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta12" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta12" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>11. ¿Pregunta 13?</h3>
+                        <input type="radio" name="pregunta13" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta13" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta13" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta13" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>11. ¿Pregunta 14?</h3>
+                        <input type="radio" name="pregunta14" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta14" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta14" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta14" value="Desacuerdo"> Desacuerdo<br><br>
+
+                        <h3>11. ¿Pregunta 15?</h3>
+                        <input type="radio" name="pregunta15" value="Muy deacuerdo"> Muy deacuerdo<br>
+                        <input type="radio" name="pregunta15" value="Deacuerdo"> Deacuerdo<br>
+                        <input type="radio" name="pregunta15" value="Indiferente"> Indiferente<br>
+                        <input type="radio" name="pregunta15" value="Desacuerdo"> Desacuerdo<br><br>
+
                         <input type="hidden" name="idUser" value="<?php echo $_SESSION['id']; ?>">
+                        <input type="hidden" name="nombreAlumno" value="<?php echo $_SESSION['usuario']; ?>">
                         <button class="btn-solid-reg page-scroll" type="submit">Enviar Respuestas</button>
                     </form>                    
                 </div> <!-- end of col -->

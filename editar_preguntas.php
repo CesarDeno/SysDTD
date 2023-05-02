@@ -1,5 +1,13 @@
 <?php
-    session_start();
+session_start();
+if(isset($_SESSION['usuario'])){
+    if($_SESSION['id'] > 100){
+        header('Location: index.php');
+    }
+}else{
+    header('Location: index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +31,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>SysDTD - Test</title>
+    <title>SysDTD - Resultados</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -72,11 +80,12 @@
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
-                    <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="resultados.php">RESULTADOS TEST</a>
-                        </li>
-                    <?php endif; ?>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
+                    </li>
                 </ul>
                 <?php
                 if(isset($_SESSION['usuario'])){
@@ -104,67 +113,51 @@
     <!-- Details -->
     <div id="about" class="basic-1">
         <div class="container">
-            <h1>Test de Trastorno Depresivo</h1>
-            <p></p>
-            <label>¡Bienvenido al cuestionario de detección de depresión! Para obtener los mejores resultados posibles, es importante que responda cada pregunta con sinceridad y sin distracciones.</label>
-            <label>Antes de comenzar el cuestionario, asegúrese de estar en un lugar tranquilo y sin interrupciones. También es importante tomar suficiente tiempo para completar el cuestionario, sin sentirse apurado o distraído.</label>
-            <label>El cuestionario consta de varias preguntas que evalúan sus sentimientos y comportamientos en los últimos tiempos. Por favor, lea cada pregunta cuidadosamente y seleccione la respuesta que mejor se aplica a su situación. No hay respuestas correctas o incorrectas, simplemente responda honestamente.</label>
-            <label>Recuerde que todas sus respuestas son confidenciales y solo se utilizarán para evaluar su estado de salud mental. Si tiene alguna inquietud o pregunta durante el cuestionario, no dude en comunicarse con su profesional de la salud mental o su médico de cabecera.</label>
-            <label>Gracias por tomarse el tiempo de completar este cuestionario. Sabemos que puede ser difícil hablar sobre problemas de salud mental, pero queremos asegurarnos de que tenga acceso a la atención médica que necesita.</label>
-            <p></p>
-            <div class="row">
-                <div class="col-lg-12">
-                    <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
-                        <form method="post" action="editar_preguntas.php">
-                        <button class="btn-solid-reg page-scroll" type="submit">EDITAR PREGUNTAS</button>
-                        </form>
-                    <?php endif; ?>
+        <h1 class="h2-heading">Editar Preguntas</h1>
+            <div class="col-lg-12">
+            <?php
+		// Conexión a la base de datos
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "sysdtd";
 
-                    <form method="post" action="guardar_respuestas.php">
-    <?php
-        // Conexión a la base de datos
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "sysdtd";
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+		// Verificar la conexión
+		if (!$conn) {
+		    die("Conexión fallida: " . mysqli_connect_error());
+		}
 
-        // Verificar la conexión
-        if (!$conn) {
-            die("Conexión fallida: " . mysqli_connect_error());
-        }
+		// Obtener las preguntas de la tabla preguntas ordenadas por el idPregunta
+		$sql = "SELECT idPregunta, pregunta FROM preguntas ORDER BY idPregunta";
+		$result = mysqli_query($conn, $sql);
 
-        // Obtener las preguntas de la tabla preguntas ordenadas por el idPregunta
-        $sql = "SELECT idPregunta, pregunta FROM preguntas ORDER BY idPregunta";
-        $result = mysqli_query($conn, $sql);
+		// Mostrar las preguntas en cuadros de texto
+		if (mysqli_num_rows($result) > 0) {
+			echo "<form method='post' action='actualizar_preguntas.php'>";
+			while($row = mysqli_fetch_assoc($result)) {
+				echo "<div>";
+				echo "<label for='pregunta_".$row["idPregunta"]."'>Pregunta ".$row["idPregunta"].":</label>";
+				echo "<input type='text' id='pregunta_".$row["idPregunta"]."' name='pregunta_".$row["idPregunta"]."' value='".$row["pregunta"]."'>";
+				echo "</div>";
+			}
+			echo "<input type='submit' value='Actualizar'>";
+			echo "</form>";
+		} else {
+			echo "No se encontraron preguntas en la base de datos.";
+		}
 
-        // Mostrar las preguntas en elementos h3 y opciones de radio en elementos p
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-                echo "<h6>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
-                echo "<p>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo'> Muy deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo'> Deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Indiferente'> Indiferente<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Desacuerdo'> Desacuerdo<br>";
-                echo "</p>";
-            }
-        } else {
-            echo "No se encontraron preguntas en la base de datos.";
-        }
-
-        mysqli_close($conn);
-    ?>
-    <input type="hidden" name="idUser" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>">
-    <input type="hidden" name="nombreAlumno" value="<?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : ''; ?>">
-    <button class="btn-solid-reg page-scroll" type="submit">Enviar Respuestas</button>
-</form>                   
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->           
+		mysqli_close($conn);
+	?>
+            </div>      
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of details -->
+
+    <div class="above-heading">
+        
+    </div>  
 
 <!-- Footer -->
 <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:#275940;}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>

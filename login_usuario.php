@@ -6,7 +6,7 @@ $pass=$_POST['pass'];
 // Datos de conexión a MySQL
 $host = "localhost";
 $user = "root";
-$password = "Xjco8RjNMV9l";
+$password = "";
 $database = "sysdtd";
 
 // Conexión a MySQL
@@ -37,7 +37,7 @@ if($filas){
     echo'
         <script>
             alert("Datos Incorrectos");
-            location.href="log-in.html";
+            location.href="log-in.php";
         </script>
     ';
 }

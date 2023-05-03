@@ -137,12 +137,12 @@ if(isset($_SESSION['usuario'])){
 		if (mysqli_num_rows($result) > 0) {
 			echo "<form method='post' action='actualizar_preguntas.php'>";
 			while($row = mysqli_fetch_assoc($result)) {
-				echo "<div>";
-				echo "<label for='pregunta_".$row["idPregunta"]."'>Pregunta ".$row["idPregunta"].":</label>";
-				echo "<input type='text' id='pregunta_".$row["idPregunta"]."' name='pregunta_".$row["idPregunta"]."' value='".$row["pregunta"]."'>";
+				echo "<div class='form-group'>";
+				echo "<h4><label for='pregunta_".$row["idPregunta"]."'>Pregunta ".$row["idPregunta"].":</label></h4>";
+				echo "<input type='text' class='form-control' id='pregunta_".$row["idPregunta"]."' name='pregunta_".$row["idPregunta"]."' value='".$row["pregunta"]."'>";
 				echo "</div>";
 			}
-			echo "<input type='submit' value='Actualizar'>";
+			echo "<input class='btn-solid-reg page-scroll' type='submit' value='Actualizar'>";
 			echo "</form>";
 		} else {
 			echo "No se encontraron preguntas en la base de datos.";

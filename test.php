@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if($_SESSION['id']){
+
+    } else{
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -116,7 +121,7 @@
                 <div class="col-lg-12">
                     <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
                         <form method="post" action="editar_preguntas.php">
-                        <button class="btn-solid-reg page-scroll" type="submit">EDITAR PREGUNTAS</button>
+                        <button class="btn-solid-reg page-scroll" type="submit">EDITAR PREGUNTAS</button><br><br>
                         <br>
                         </form>
                     <?php endif; ?>

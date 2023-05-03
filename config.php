@@ -7,7 +7,7 @@
 
 
 /* Creando una nueva conexión a la base de datos. */
-$conn = new mysqli("localhost", "root", "", "sysdtd");
+$conn = new mysqli("localhost", "root", "Xjco8RjNMV9l", "sysdtd");
 
 /* Comprobando si hay un error de conexión. */
 if ($conn->connect_error) {

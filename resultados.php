@@ -127,7 +127,7 @@ if(isset($_SESSION['usuario'])){
     </div>  
 
     <?php
-    require_once"index2.php";
+    require_once"tabla_resultados.php";
     ?>
 
 <!-- Footer -->

@@ -117,6 +117,7 @@
                     <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
                         <form method="post" action="editar_preguntas.php">
                         <button class="btn-solid-reg page-scroll" type="submit">EDITAR PREGUNTAS</button>
+                        <br>
                         </form>
                     <?php endif; ?>
 
@@ -144,10 +145,10 @@
             while($row = mysqli_fetch_assoc($result)) {
                 echo "<h6>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
                 echo "<p>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo'> Muy deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo'> Deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Indiferente'> Indiferente<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Desacuerdo'> Desacuerdo<br>";
+                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo' required> Muy deacuerdo<br>";
+                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo' required> Deacuerdo<br>";
+                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Indiferente' required> Indiferente<br>";
+                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Desacuerdo' required> Desacuerdo<br>";
                 echo "</p>";
             }
         } else {

@@ -50,15 +50,21 @@ for ($i = 1; $i <= 15; $i++) {
 $resultado = ($totalPoints >= 30) ? 'Si' : 'No';
 
 // Insertar respuestas en la base de datos
-$sql = "INSERT INTO respuestas (alumnoID, nombreAlumno, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, resultado) 
-VALUES ('$idUser','$nombreAlumno','$pregunta1', '$pregunta2', '$pregunta3', '$pregunta4', '$pregunta5', '$pregunta6', '$pregunta7', '$pregunta8', '$pregunta9', '$pregunta10', '$pregunta11', '$pregunta12', '$pregunta13', '$pregunta14', '$pregunta15','$resultado')";
-if ($conn->query($sql) === TRUE) {
+try {
+  $sql = "INSERT INTO respuestas (alumnoID, nombreAlumno, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, resultado) 
+  VALUES ('$idUser','$nombreAlumno','$pregunta1', '$pregunta2', '$pregunta3', '$pregunta4', '$pregunta5', '$pregunta6', '$pregunta7', '$pregunta8', '$pregunta9', '$pregunta10', '$pregunta11', '$pregunta12', '$pregunta13', '$pregunta14', '$pregunta15','$resultado')";
+  
+  if ($conn->query($sql) === TRUE) {
+    echo '<script>
+          alert("Datos guardados correctamente");
+          location.href="index.php";
+          </script>';
+  }
+} catch (mysqli_sql_exception $exception) {
   echo '<script>
-        alert("Datos guardados correctamente");
+        alert("Este usuario ya respondio el test")
         location.href="index.php";
-        </script>';
-} else {
-  echo "Error al guardar las respuestas: " . $conn->error;
+        </script>'; 
 }
 
 // Cerrar conexión a MySQL

@@ -83,7 +83,6 @@ session_start();
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-
     <!-- Header -->
     <header id="header" class="ex-2-header">
         <div class="container">
@@ -92,35 +91,34 @@ session_start();
                     <h1>Iniciar Sesion</h1>
                     <!-- Sign Up Form -->
                     <div class="form-container">
-                        <form action="login_usuario.php" method="post">
-                            <div class="form-group">
-                                <input name="emailuser" type="email" class="form-control-input" required>
-                                <label class="label-control">Correo</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input name="pass" type="password" class="form-control-input" required>
-                                <label class="label-control">Contrase&ntilde;a</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">INICIAR SESION</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
+                    <form action="login_usuario.php" method="post" onsubmit="return validarFormulario()">
+                        <div class="form-group">
+                            <input name="emailuser" id="emailuser" type="email" class="form-control-input" required>
+                            <label class="label-control">Correo</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input name="pass" id="pass" type="password" class="form-control-input" required>
+                            <label class="label-control">Contraseña</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">INICIAR SESIÓN</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
                     </div> <!-- end of form container -->
                     <!-- end of sign up form -->
-
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </header> <!-- end of ex-header -->
     <!-- end of header -->
 
-
     <!-- Scripts -->
+    <script src="js/validacion.js"></script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->

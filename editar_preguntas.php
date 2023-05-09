@@ -31,7 +31,7 @@ if(isset($_SESSION['usuario'])){
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>SysDTD - Resultados</title>
+    <title>SysDTD - Editar</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">

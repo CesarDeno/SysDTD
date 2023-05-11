@@ -2,7 +2,7 @@
 // Datos de conexión a MySQL
 $host = "localhost";
 $user = "root";
-$password = "Xjco8RjNMV9l";
+$password = "";
 $database = "sysdtd";
 
 // Conexión a MySQL
@@ -14,13 +14,19 @@ if ($conn->connect_error) {
 // Obtener el alumnoID a eliminar
 $alumnoID = $_GET["alumnoID"];
 
-// Eliminar el registro correspondiente en la base de datos
+// Eliminar el registro correspondiente en la tabla respuestas
 $sql = "DELETE FROM respuestas WHERE alumnoID = '$alumnoID'";
 if ($conn->query($sql) === TRUE) {
-  echo '<script>
-        alert("Usuario eliminado correctamente");
-        location.href="resultados.php";
-        </script>';
+  // Eliminar el registro correspondiente en la tabla usuarios
+  $sql = "DELETE FROM usuarios WHERE idUser = '$alumnoID'";
+  if ($conn->query($sql) === TRUE) {
+    echo '<script>
+          alert("Usuario eliminado correctamente");
+          location.href="resultados.php";
+          </script>';
+  } else {
+    echo "Error al eliminar usuario: " . $conn->error;
+  }
 } else {
   echo "Error al eliminar usuario: " . $conn->error;
 }

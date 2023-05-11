@@ -1,15 +1,16 @@
 <?php
-/*
-* Script: Conexión a base de datos de MySQL con PHP
-* Autor: Marco Robles
-* Team: Códigos de Programación
-*/
 
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sysdtd";
 
-/* Creando una nueva conexión a la base de datos. */
-$conn = new mysqli("localhost", "root", "Xjco8RjNMV9l", "sysdtd");
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-/* Comprobando si hay un error de conexión. */
+// Verificar si se ha realizado la conexión correctamente
 if ($conn->connect_error) {
-    die('Error de conexion ' . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
+
+?>

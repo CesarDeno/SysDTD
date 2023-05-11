@@ -131,7 +131,7 @@
         // Conexión a la base de datos
         $servername = "localhost";
         $username = "root";
-        $password = "Xjco8RjNMV9l";
+        $password = "";
         $dbname = "sysdtd";
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);

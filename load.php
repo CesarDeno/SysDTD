@@ -9,12 +9,12 @@
 require 'config.php';
 
 /* Un arreglo de las columnas a mostrar en la tabla */
-$columns = ['alumnoID', 'nombreAlumno', 'grado', 'grupo', 'resultado'];
+$columns = ['idUser', 'username', 'grado', 'grupo', 'resultado'];
 
 /* Nombre de la tabla */
-$table = "respuestas";
+$table = 'usuarios';
 
-$id = 'alumnoID';
+$id = 'idUser';
 
 $campo = isset($_POST['campo']) ? $conn->real_escape_string($_POST['campo']) : null;
 
@@ -60,9 +60,9 @@ $sLimit = "LIMIT $inicio , $limit";
 
 
 /* Consulta */
-$sql = "SELECT r.alumnoID, r.nombreAlumno, u.grado, u.grupo, r.resultado
-FROM respuestas r
-JOIN usuarios u ON r.alumnoID = u.idUser
+$sql = "SELECT u.idUser, u.username, u.grado, u.grupo, r.resultado
+FROM usuarios u
+LEFT JOIN respuestas r ON u.idUser = r.alumnoID
 $where
 $sOrder
 $sLimit";
@@ -91,12 +91,12 @@ $output['paginacion'] = '';
 if ($num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         $output['data'] .= '<tr>';
-        $output['data'] .= '<td>' . $row['alumnoID'] . '</td>';
-        $output['data'] .= '<td>' . $row['nombreAlumno'] . '</td>';
+        $output['data'] .= '<td>' . $row['idUser'] . '</td>';
+        $output['data'] .= '<td>' . $row['username'] . '</td>';
         $output['data'] .= '<td>' . $row['grado'] . '</td>';
         $output['data'] .= '<td>' . $row['grupo'] . '</td>';
         $output['data'] .= '<td>' . $row['resultado'] . '</td>';
-        $output['data'] .= "<td><a class='btn btn-danger btn-sm' href='eliminar.php?alumnoID=" . $row['alumnoID'] . "'>Eliminar</a></td>";
+        $output['data'] .= "<td><a class='btn btn-danger btn-sm' href='eliminar.php?alumnoID=" . $row['idUser'] . "'>Eliminar</a></td>";
         $output['data'] .= '</tr>';
     }
 } else {

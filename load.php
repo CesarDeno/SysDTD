@@ -125,9 +125,9 @@ if ($output['totalRegistros'] > 0) {
 
     for ($i = $numeroInicio; $i <= $numeroFin; $i++) {
         if ($pagina == $i) {
-            $output['paginacion'] .= '<li class="page-item active"><a class="page-link" href="#">' . $i . '</a></li>';
+            $output['paginacion'] .= '<li class="page-item active"><a class="page-link">' . $i . '</a></li>';
         } else {
-            $output['paginacion'] .= '<li class="page-item"><a class="page-link" href="#" onclick="nextPage(' . $i . ')">' . $i . '</a></li>';
+            $output['paginacion'] .= '<li class="page-item"><a class="page-link"  onclick="nextPage(' . $i . ')">' . $i . '</a></li>';
         }
     }
 

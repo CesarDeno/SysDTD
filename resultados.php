@@ -115,7 +115,7 @@ if(isset($_SESSION['usuario'])){
         <div class="container">
             <h1>Resultados del Test de Trastorno Depresivo</h1>
             <p></p>
-            <label>¡Bienvenido a la visualizacion de datos del test de trastorno depresivo! En esta sección, podrás visualizar los resultados obtenidos por los alumnos en distintas evaluaciones y actividades realizadas en el transcurso del año escolar. Los datos se presentan de manera clara y organizada, permitiéndote identificar rápidamente áreas de oportunidad y fortalezas en el desempeño de los estudiantes. Con esta herramienta, podrás tomar decisiones informadas para mejorar la calidad educativa en tu institución..</label>       
+            <label class="text-justify">¡Bienvenido a la visualizacion de datos del test de trastorno depresivo! En esta sección, podrás visualizar los resultados obtenidos por los alumnos en distintas evaluaciones y actividades realizadas en el transcurso del año escolar. Los datos se presentan de manera clara y organizada, permitiéndote identificar rápidamente áreas de oportunidad y fortalezas en el desempeño de los estudiantes. Con esta herramienta, podrás tomar decisiones informadas para mejorar la calidad educativa en tu institución..</label>       
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of details -->
@@ -129,25 +129,52 @@ if(isset($_SESSION['usuario'])){
     <?php
     require_once"tabla_resultados.php";
     ?>
+    
+    <div id="beneficios" class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-body">
+                            <?php
+                            require_once"graficas.php";
+                            ?>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+                </div>
+            </div>
+        </div>
+    </div>
+   
 
-<form method="post" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="csvFile">Insertar CSV Alumnos</label>
-    <input type="file" class="form-control-file" id="csvFile" name="csvFile">
-  </div>
-  <button type="submit" class="btn btn-primary" name="submit">Subir archivo e insertar datos</button>
-</form>
-
-<?php
-  include 'insertar_usuarios.php';
-?>
-
+    <!-- Details -->
+    <div id="about" class="basic-1">
+        <div class="container">
+            <h1>Importar Usuarios</h1>
+            <p></p>
+            <label class="text-justify">
+            Para actualizar la lista de alumnos, sigue estos pasos. Primero, asegúra de tener un archivo .csv con la información actualizada de los alumnos. Luego, busca el boton de seleccionar archivo y haz clic en ella. Selecciona el archivo .csv desde tu computadora y confirma la carga. Asegúrate de que el formato del archivo sea correcto y que los datos estén organizados adecuadamente. Una vez que el archivo se haya subido correctamente, el sistema procesará la información y actualizará automáticamente la lista de alumnos con los nuevos datos. Verifica la lista después de la actualización para confirmar que todos los cambios se hayan aplicado correctamente.
+            </label>
+            <form method="post" enctype="multipart/form-data">
+            <label for="csvFile">Insertar CSV Alumnos</label>
+            <input type="file" class="form-control-file" id="csvFile" name="csvFile"> <br>
+            <button type="submit" class="btn btn-primary" name="submit">Subir archivo e insertar datos</button><br>
+            </form><br>  
+            <?php
+            include 'insertar_usuarios.php';
+            ?>       
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
 
 <!-- Footer -->
 <svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79"><defs><style>.cls-2{fill:#275940;}</style></defs><title>footer-frame</title><path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)"/></svg>
 <!-- end of footer -->
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->

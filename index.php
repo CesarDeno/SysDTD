@@ -139,8 +139,8 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Acerca de SysDTD</h2>
-                        <p>Nuestro sistema de detección de trastorno depresivo utiliza las últimas tecnologías de ciencia de datos para ayudar a diagnosticar correctamente si un alumno tiene este trastorno. El sistema recopila información de los cuestionarios completados por los estudiantes, incluyendo sus respuestas a preguntas específicas y sus patrones de respuesta.</p>
-                        <p>Nuestro algoritmo de ciencia de datos procesa esta información y utiliza modelos estadísticos avanzados para identificar patrones y tendencias en las respuestas de los estudiantes. El sistema también tiene en cuenta otros factores, como la edad del estudiante, su género y cualquier otro síntoma relacionado con la depresión.</p>
+                        <p class="text-justify">Nuestro sistema de detección de trastorno depresivo utiliza las últimas tecnologías de ciencia de datos para ayudar a diagnosticar correctamente si un alumno tiene este trastorno. El sistema recopila información de los cuestionarios completados por los estudiantes, incluyendo sus respuestas a preguntas específicas y sus patrones de respuesta.</p>
+                        <p class="text-justify">Nuestro algoritmo de ciencia de datos procesa esta información y utiliza modelos estadísticos avanzados para identificar patrones y tendencias en las respuestas de los estudiantes. El sistema también tiene en cuenta otros factores, como la edad del estudiante, su género y cualquier otro síntoma relacionado con la depresión.</p>
                         <a class="btn-solid-reg page-scroll" href="log-in.php">REALIZAR TEST</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -249,7 +249,7 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Colegio Alerce y DT Innovations</h2>
-                        <p>En nuestra empresa, estamos comprometidos con mejorar la salud mental de las personas, y creemos que la educación es uno de los pilares fundamentales para lograrlo. Por eso, cuando conocimos al Colegio Alerce y su misión de formar a sus alumnos en un ambiente inclusivo y respetuoso, supimos que teníamos que colaborar. 
+                        <p class="text-justify">En nuestra empresa, estamos comprometidos con mejorar la salud mental de las personas, y creemos que la educación es uno de los pilares fundamentales para lograrlo. Por eso, cuando conocimos al Colegio Alerce y su misión de formar a sus alumnos en un ambiente inclusivo y respetuoso, supimos que teníamos que colaborar. 
                             Juntos, hemos creado un sistema innovador que permite detectar de manera temprana signos de depresión en los estudiantes, 
                             y así brindarles el apoyo que necesitan para superar cualquier obstáculo. Nos enorgullece trabajar con el Colegio Alerce en esta misión en común, 
                             y estamos seguros de que juntos podemos hacer una gran diferencia en la vida de nuestros jóvenes.</p>

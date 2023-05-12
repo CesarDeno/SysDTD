@@ -3,7 +3,7 @@
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Xjco8RjNMV9l";
 $dbname = "sysdtd";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -84,6 +84,9 @@ if(isset($_FILES["csvFile"])) {
         echo "El archivo seleccionado no existe o no es legible.";
     }
 
+}
+else {
+    echo "El archivo seleccionado tiene que ser en formato .csv";
 }
 
 

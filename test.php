@@ -111,11 +111,11 @@
         <div class="container">
             <h1>Test de Trastorno Depresivo</h1>
             <p></p>
-            <label>¡Bienvenido al cuestionario de detección de depresión! Para obtener los mejores resultados posibles, es importante que responda cada pregunta con sinceridad y sin distracciones.</label>
-            <label>Antes de comenzar el cuestionario, asegúrese de estar en un lugar tranquilo y sin interrupciones. También es importante tomar suficiente tiempo para completar el cuestionario, sin sentirse apurado o distraído.</label>
-            <label>El cuestionario consta de varias preguntas que evalúan sus sentimientos y comportamientos en los últimos tiempos. Por favor, lea cada pregunta cuidadosamente y seleccione la respuesta que mejor se aplica a su situación. No hay respuestas correctas o incorrectas, simplemente responda honestamente.</label>
-            <label>Recuerde que todas sus respuestas son confidenciales y solo se utilizarán para evaluar su estado de salud mental. Si tiene alguna inquietud o pregunta durante el cuestionario, no dude en comunicarse con su profesional de la salud mental o su médico de cabecera.</label>
-            <label>Gracias por tomarse el tiempo de completar este cuestionario. Sabemos que puede ser difícil hablar sobre problemas de salud mental, pero queremos asegurarnos de que tenga acceso a la atención médica que necesita.</label>
+            <label class="text-justify">¡Bienvenido al cuestionario de detección de depresión! Para obtener los mejores resultados posibles, es importante que responda cada pregunta con sinceridad y sin distracciones.</label>
+            <label class="text-justify">Antes de comenzar el cuestionario, asegúrese de estar en un lugar tranquilo y sin interrupciones. También es importante tomar suficiente tiempo para completar el cuestionario, sin sentirse apurado o distraído.</label>
+            <label class="text-justify">El cuestionario consta de varias preguntas que evalúan sus sentimientos y comportamientos en los últimos tiempos. Por favor, lea cada pregunta cuidadosamente y seleccione la respuesta que mejor se aplica a su situación. No hay respuestas correctas o incorrectas, simplemente responda honestamente.</label>
+            <label class="text-justify">Recuerde que todas sus respuestas son confidenciales y solo se utilizarán para evaluar su estado de salud mental. Si tiene alguna inquietud o pregunta durante el cuestionario, no dude en comunicarse con su profesional de la salud mental o su médico de cabecera.</label>
+            <label class="text-justify">Gracias por tomarse el tiempo de completar este cuestionario. Sabemos que puede ser difícil hablar sobre problemas de salud mental, pero queremos asegurarnos de que tenga acceso a la atención médica que necesita.</label>
             <p></p>
             <div class="row">
                 <div class="col-lg-12">
@@ -148,7 +148,7 @@
         // Mostrar las preguntas en elementos h3 y opciones de radio en elementos p
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<h6>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
+                echo "<h6 class='text-justify'>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
                 echo "<p>";
                 echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo' required> Muy deacuerdo<br>";
                 echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo' required> Deacuerdo<br>";

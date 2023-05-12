@@ -48,23 +48,25 @@
                 </div>
             </div>
 
-            <div class="row py-4">
-                <div class="col">
-                    <table class="table table-sm table-bordered table-striped">
-                        <thead>
-                            <th class="sort asc">Id Alumno</th>
-                            <th class="sort asc">Nombre Alumno</th>
-                            <th class="sort asc">Grado</th>
-                            <th class="sort asc">Grupo</th>
-                            <th class="sort asc">Diagnostico</th>
-                            <th></th>
-                        </thead>
-
-                        <!-- El id del cuerpo de la tabla. -->
-                        <tbody id="content">
-
-                        </tbody>
-                    </table>
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="sort asc">Id Alumno</th>
+                                        <th class="sort asc">Nombre Alumno</th>
+                                        <th class="sort asc">Grado</th>
+                                        <th class="sort asc">Grupo</th>
+                                        <th class="sort asc">Diagnóstico</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="content"></tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -10,13 +10,6 @@ function validarFormulario() {
         return false;
     }
 
-    // Validar la contraseña (mínimo 8 caracteres con al menos una letra mayúscula, una letra minúscula y un número)
-    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    if (!passwordRegex.test(password)) {
-        alert("Ingrese una contraseña valida");
-        return false;
-    }
-
     // Si la validación es exitosa, puedes enviar el formulario al servidor
     return true;
 }

@@ -1,10 +1,10 @@
 <?php
+session_start();
 if(isset($_SESSION['usuario'])){
     if($_SESSION['id'] > 100){
         header('Location: index.php');
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -107,62 +107,15 @@ if(isset($_SESSION['usuario'])){
     </header> <!-- end of header -->
     <!-- end of header -->   
     <svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310"><defs><style>.cls-1{fill:#275940;}</style></defs><title>header-frame</title><path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/></svg> 
-
-    <!-- Details -->
-    <div id="about" class="basic-1">
-        <div class="container">
-            <h1>Resultados del Test de Trastorno Depresivo</h1>
-            <p></p>
-            <label class="text-justify">¡Bienvenido a la visualizacion de datos del test de trastorno depresivo! En esta sección, podrás visualizar los resultados obtenidos por los alumnos en distintas evaluaciones y actividades realizadas en el transcurso del año escolar. Los datos se presentan de manera clara y organizada, permitiéndote identificar rápidamente áreas de oportunidad y fortalezas en el desempeño de los estudiantes. Con esta herramienta, podrás tomar decisiones informadas para mejorar la calidad educativa en tu institución..</label>       
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of details -->
-
-    <div class="above-heading">
-        <h1 class="h2-heading">Resultados del Test</h1>
-        <div class="container-table">
-        </div>
-    </div>  
-
-    <?php
-    require_once"tabla_resultados.php";
-    ?>
-    
-    <div id="beneficios" class="cards-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <?php
-                            require_once"graficas.php";
-                            ?>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-                </div>
-            </div>
-        </div>
-    </div>
    
 
     <!-- Details -->
     <div id="about" class="basic-1">
         <div class="container">
-            <h1>Importar Usuarios</h1>
-            <p></p>
-            <label class="text-justify">
-            Para actualizar la lista de alumnos, sigue estos pasos. Primero, asegúra de tener un archivo .csv con la información actualizada de los alumnos. Luego, busca el boton de seleccionar archivo y haz clic en ella. Selecciona el archivo .csv desde tu computadora y confirma la carga. Asegúrate de que el formato del archivo sea correcto y que los datos estén organizados adecuadamente. Una vez que el archivo se haya subido correctamente, el sistema procesará la información y actualizará automáticamente la lista de alumnos con los nuevos datos. Verifica la lista después de la actualización para confirmar que todos los cambios se hayan aplicado correctamente.
-            </label>
-            <form method="post" enctype="multipart/form-data">
-            <label for="csvFile">Insertar CSV Alumnos</label>
-            <input type="file" class="form-control-file" id="csvFile" name="csvFile"> <br>
-            <button type="submit" class="btn btn-primary" name="submit">Subir archivo e insertar datos</button><br>
-            </form><br>  
+            <p></p><br>  
             <?php
-            include 'insertar_usuarios.php';
-            ?>       
+        require_once"ver_respuestas.php";
+    ?>       
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of details -->

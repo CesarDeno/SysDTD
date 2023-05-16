@@ -92,10 +92,11 @@ if ($num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
         $output['data'] .= '<tr>';
         $output['data'] .= '<td>' . $row['idUser'] . '</td>';
-        $output['data'] .= '<td>' . $row['username'] . '</td>';
+        $output['data'] .= '<td>' . $row['username'] . '</td>'; 
         $output['data'] .= '<td>' . $row['grado'] . '</td>';
         $output['data'] .= '<td>' . $row['grupo'] . '</td>';
         $output['data'] .= '<td>' . $row['resultado'] . '</td>';
+        $output['data'] .= "<td><a class='btn btn-primary btn-sm' href='respuestas_alumnos.php?idUser=" . $row['idUser'] . "'>Resultados</a></td>";
         $output['data'] .= "<td><a class='btn btn-danger btn-sm' href='eliminar.php?alumnoID=" . $row['idUser'] . "'>Eliminar</a></td>";
         $output['data'] .= '</tr>';
     }

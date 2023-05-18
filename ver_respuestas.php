@@ -1,7 +1,7 @@
 <?php
 
 // Establecer conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "sysdtd");
+$conn = new mysqli("localhost", "root", "Xjco8RjNMV9l", "sysdtd");
 if ($conn->connect_error) {
     die("Error al conectarse a la base de datos: " . $conn->connect_error);
 }

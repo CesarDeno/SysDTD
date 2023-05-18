@@ -34,16 +34,17 @@ echo '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>';
 echo '
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Resultados de Alumnos</h5>
-                    <canvas id="grafica"></canvas>
+                    <canvas id="grafica" width="800" height="600"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>';
+
 
 echo '<script>
     var ctx = document.getElementById("grafica").getContext("2d");

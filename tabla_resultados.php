@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_SESSION['usuario'])){
     if($_SESSION['id'] > 100){
         header('Location: index.php');

@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+include 'time_out_session.php';
 $correo=$_POST['emailuser'];
 $pass=$_POST['pass'];
 

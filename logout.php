@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'time_out_session.php';
 if(isset($_POST['cerrar-sesion'])){
     session_destroy();
 }

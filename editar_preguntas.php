@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'time_out_session.php';
 if(isset($_SESSION['usuario'])){
     if($_SESSION['id'] > 100){
         header('Location: index.php');
@@ -81,10 +81,10 @@ if(isset($_SESSION['usuario'])){
                         <a class="nav-link page-scroll" href="index.php">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
+                        <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
+                        <a class="nav-link page-scroll" href="editar_preguntas.php">EDITAR PREGUNTAS</a>
                     </li>
                 </ul>
                 <?php

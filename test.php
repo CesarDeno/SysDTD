@@ -1,10 +1,17 @@
 <?php
-    session_start();
-    if($_SESSION['id']){
+    include 'time_out_session.php';
+    if($_SESSION['id'] > 100){
 
-    } else{
+    } else {
         header("Location: index.php");
     }
+
+    include 'verificar_test.php';
+    // Obtener el ID del alumno actual (puedes cambiar esto según tu lógica de autenticación)
+    $alumnoID = $_SESSION['id'];
+
+    // Verificar si el alumno tiene un resultado guardado en la base de datos
+    verificarResultadoGuardado($alumnoID);
 ?>
 
 <!DOCTYPE html>
@@ -119,53 +126,46 @@
             <p></p>
             <div class="row">
                 <div class="col-lg-12">
-                    <?php if(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
-                        <form method="post" action="editar_preguntas.php">
-                        <button class="btn-solid-reg page-scroll" type="submit">EDITAR PREGUNTAS</button><br><br>
-                        <br>
-                        </form>
-                    <?php endif; ?>
-
                     <form method="post" action="guardar_respuestas.php">
-    <?php
-        // Conexión a la base de datos
-        $servername = "localhost";
-        $username = "root";
-        $password = "Xjco8RjNMV9l";
-        $dbname = "sysdtd";
+                        <?php
+                            // Conexión a la base de datos
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "Xjco8RjNMV9l";
+                            $dbname = "sysdtd";
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                            $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-        // Verificar la conexión
-        if (!$conn) {
-            die("Conexión fallida: " . mysqli_connect_error());
-        }
+                            // Verificar la conexión
+                            if (!$conn) {
+                                die("Conexión fallida: " . mysqli_connect_error());
+                            }
 
-        // Obtener las preguntas de la tabla preguntas ordenadas por el idPregunta
-        $sql = "SELECT idPregunta, pregunta FROM preguntas ORDER BY idPregunta";
-        $result = mysqli_query($conn, $sql);
+                            // Obtener las preguntas de la tabla preguntas ordenadas por el idPregunta
+                            $sql = "SELECT idPregunta, pregunta FROM preguntas ORDER BY idPregunta";
+                            $result = mysqli_query($conn, $sql);
 
-        // Mostrar las preguntas en elementos h3 y opciones de radio en elementos p
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-                echo "<h6 class='text-justify'>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
-                echo "<p>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo' required> Muy deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo' required> Deacuerdo<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Indiferente' required> Indiferente<br>";
-                echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Desacuerdo' required> Desacuerdo<br>";
-                echo "</p>";
-            }
-        } else {
-            echo "No se encontraron preguntas en la base de datos.";
-        }
+                            // Mostrar las preguntas en elementos h3 y opciones de radio en elementos p
+                            if (mysqli_num_rows($result) > 0) {
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    echo "<h6 class='text-justify'>".$row["idPregunta"].". ".$row["pregunta"]."</h6>";
+                                    echo "<p>";
+                                    echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Muy deacuerdo' required> Muy deacuerdo<br>";
+                                    echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Deacuerdo' required> Deacuerdo<br>";
+                                    echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Indiferente' required> Indiferente<br>";
+                                    echo "<input type='radio' name='pregunta".$row["idPregunta"]."' value='Desacuerdo' required> Desacuerdo<br>";
+                                    echo "</p>";
+                                }
+                            } else {
+                                echo "No se encontraron preguntas en la base de datos.";
+                            }
 
-        mysqli_close($conn);
-    ?>
-    <input type="hidden" name="idUser" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>">
-    <input type="hidden" name="nombreAlumno" value="<?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : ''; ?>">
-    <button class="btn-solid-reg page-scroll" type="submit">Enviar Respuestas</button>
-</form>                   
+                            mysqli_close($conn);
+                        ?>
+                        <input type="hidden" name="idUser" value="<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : ''; ?>">
+                        <input type="hidden" name="nombreAlumno" value="<?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : ''; ?>">
+                        <button class="btn-solid-reg page-scroll" type="submit">Enviar Respuestas</button>
+                    </form>                   
                 </div> <!-- end of col -->
             </div> <!-- end of row -->           
         </div> <!-- end of container -->

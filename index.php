@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include 'time_out_session.php';
 ?>
 
 <!DOCTYPE html>
@@ -82,12 +82,12 @@
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
                         </li>
-                    <?php elseif(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="test.php">REALIZAR TEST</a>
-                        </li>
+                        <?php elseif(isset($_SESSION['usuario']) && $_SESSION['id'] <= 100): ?>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="resultados.php">RESULTADOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="editar_preguntas.php">EDITAR PREGUNTAS</a>
                         </li>
                 <?php endif; ?>
                 </ul>

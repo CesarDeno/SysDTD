@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'time_out_session.php';
 if(isset($_SESSION['usuario'])){
     if($_SESSION['id'] > 100){
         header('Location: index.php');

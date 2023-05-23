@@ -139,8 +139,9 @@
                 <div class="col-lg-6">
                     <div class="text-container">
                         <h2>Acerca de SysDTD</h2>
-                        <p class="text-justify">Nuestro sistema de detección de trastorno depresivo utiliza las últimas tecnologías de ciencia de datos para ayudar a diagnosticar correctamente si un alumno tiene este trastorno. El sistema recopila información de los cuestionarios completados por los estudiantes, incluyendo sus respuestas a preguntas específicas y sus patrones de respuesta.</p>
-                        <p class="text-justify">Nuestro algoritmo de ciencia de datos procesa esta información y utiliza modelos estadísticos avanzados para identificar patrones y tendencias en las respuestas de los estudiantes. El sistema también tiene en cuenta otros factores, como la edad del estudiante, su género y cualquier otro síntoma relacionado con la depresión.</p>
+                        <p class="text-justify">Este test es una herramienta diseñada para evaluar la presencia y la intensidad de los síntomas asociados a la depresión en una persona. Esta evaluación se basa en una serie de preguntas que abordan diversos aspectos emocionales, cognitivos y físicos relacionados con el estado de ánimo.</p>
+                        <p class="text-justify">El objetivo del test es proporcionar una medida objetiva de la presencia y la gravedad de los síntomas depresivos, lo cual puede ayudar a los profesionales de la salud a realizar un diagnóstico más preciso y a determinar el tipo de tratamiento más adecuado para cada individuo.</p>
+                        <p class="text-justify">Es importante destacar que no constituye un diagnóstico definitivo, pero puede ser una herramienta útil para identificar posibles casos de depresión y proporcionar una guía inicial para el tratamiento. Si los resultados indican una alta probabilidad de depresión, es fundamental que la persona consulte a un profesional de la salud mental para una evaluación más exhaustiva y un plan de tratamiento adecuado.</p>
                         <a class="btn-solid-reg page-scroll" href="log-in.php">REALIZAR TEST</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -208,7 +209,7 @@
                             <img class="img-fluid" src="images/test.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">AHORRO DE TIEMPO Y RECURSOS EN COMPARACION A DIAGNOSTICOS TRADICIONALES</h4>
+                            <h4 class="card-title">AHORRO DE TIEMPO Y RECURSOS EN COMPARACIÓN CON DIAGNÓSTICOS TRADICIONALES</h4>
                             <p></p>
                         </div>
                     </div>
@@ -219,7 +220,7 @@
                             <img class="img-fluid" src="images/access.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">ACCESO FACIL Y CONVENIENTE</h4>
+                            <h4 class="card-title">ACCESO FÁCIL Y CONVENIENTE</h4>
                             <p></p>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Xjco8RjNMV9l";
 $dbname = "sysdtd";
 
 function verificarResultadoGuardado($idAlumno) {
